@@ -74,7 +74,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students
     WHERE grade = 10
-    ORDER BY new_students.id LIMIT ?
+    ORDER BY students.id LIMIT ?
     SQL
     DB[:conn].execute(sql, number).map do |row|
       self.new_from_db(row)
